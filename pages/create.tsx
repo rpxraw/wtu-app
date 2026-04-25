@@ -14,14 +14,31 @@ export default function Create(){
   const slug=slugify(name)
   if(!slug){setErr('Inserisci un nickname valido.');return}
   setLoading(true)
-  const {error}=await supabase.from('profiles').insert({slug,nickname:name.trim()})
-  setLoading(false)
-  if(error){setErr('Nickname già usato o errore. Prova con un altro nome.');return}
-  router.push('/u/'+slug)
+ const randomId = Math.floor(Math.random() * 10000)
+const uniqueSlug = slug + "-" + randomId
+
+const { error } = await supabase
+  .from('profiles')
+  .insert({ slug: uniqueSlug, nickname: name.trim() })
+
+setLoading(false)
+
+if (error) {
+  console.log(error)
+
+  if (error.message.includes("duplicate")) {
+    setErr("⚠️ Nome già utilizzato. Prova un altro 👀")
+  } else {
+    setErr("❌ Errore tecnico. Riprova.")
+  }
+  return
+}
+
+router.push('/u/' + uniqueSlug)
  }
  return <main className="container">
   <section className="hero">
-   <div><div className="logo">WTU</div><div className="tag">Crea il tuo link anonimo</div></div>
+   <div><div className="logo">WTU 👁️​​</div><div className="tag">Crea il tuo link anonimo</div></div>
    <div className="card grid">
     <h1 className="title">Come vuoi apparire?</h1>
     <input className="input" placeholder="Es. Luigi" value={name} onChange={e=>setName(e.target.value)} />
