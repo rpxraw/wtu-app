@@ -34,7 +34,7 @@ if (error) {
   return
 }
 
-router.push('/u/' + uniqueSlug)
+router.push('/share/' + uniqueSlug)
  }
  return <main className="container">
   <section className="hero">
