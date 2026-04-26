@@ -55,7 +55,7 @@ if (responses.length < MIN_RISPOSTE) {
  const link=`${site}/u/${slug}`
  const text=encodeURIComponent(`Ho scoperto cosa pensano davvero di me 😳\nRispondi anonimamente anche tu:\n${link}`)
  return <main className="container"><section className="hero">
-  <div><div className="logo">WTU</div><div className="tag">Risultati anonimi</div></div>
+  <div><div className="logo">WTU 👁️​</div><div className="tag">Risultati anonimi</div></div>
   <div className="card grid">
    <h1 className="resultBig">Solo il {trust}% si fida davvero di Te, {profile?.nickname||slug} 😉</h1>
    <p className="small">Risposte ricevute: {responses.length}. Per risultati credibili servono almeno 5 risposte.</p>
