@@ -23,12 +23,17 @@ export default function SharePage() {
         {link}
       </div>
 
-      <button onClick={() => {
-        navigator.clipboard.writeText(link)
-        alert("Link copiato!")
-      }}>
-        📋 Copia link ​​🌍​
-      </button>
+      <button
+  onClick={() => {
+    navigator.clipboard.writeText(link)
+    alert("Link copiato!")
+  }}
+  style={{
+    cursor: "pointer"
+  }}
+>
+  📋 Copia link 🌍
+</button>
 
       <br /><br />
 
@@ -50,8 +55,10 @@ export default function SharePage() {
       fontSize: "16px",
       fontWeight: 700,
       cursor: "pointer",
-      width: "80%",
-      margin: "20px auto"
+      width: "fit-content",
+margin: "20px auto",
+minWidth: "auto"
+      
     }}
   >
     Condividi su WhatsApp
