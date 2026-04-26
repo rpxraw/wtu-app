@@ -21,7 +21,7 @@ export default function Vote(){
   router.push('/thanks?u='+slug)
  }
  return <main className="container"><section className="hero">
-  <div><div className="logo">WTU ​​👁️‍🗨️</div><div className="tag">Rispondi anonimamente</div></div>
+  <div><div className="logo">WTU ​​​👁️​</div><div className="tag">Rispondi anonimamente</div></div>
   <div className="card grid">
    <h1 className="title">Cosa pensi davvero di {profile?.nickname||slug}? ​🤭​🤫​🤣​​ ​​</h1>
    <p>Rispondi in modo sincero 😈</p>
