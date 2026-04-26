@@ -4,7 +4,7 @@ export default function Home(){
  return <main className="container">
   <section className="hero">
    <div>
-    <div className="logo">WTU ​​👁️‍🗨️​</div>
+    <div className="logo">WTU ​​​👁️​​</div>
     <div className="tag">What They Really Think</div>
    </div>
    <div className="grid">
